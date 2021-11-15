@@ -1,0 +1,102 @@
+html {
+  height: 100%;
+}
+body {
+  margin-top: 30px;
+  background: linear-gradient(
+    181.2deg,
+    rgb(181, 239, 249) 10.5%,
+    rgb(254, 254, 254) 86.8%
+  );
+}
+h1,
+h2,
+h3,
+p,
+li {
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  font-size: 48px;
+  color: #423b3b;
+  font-weight: 400;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+ul {
+  list-style: none;
+  color: grey;
+}
+li {
+  padding-top: 4px;
+  padding-bottom: 2px;
+}
+.container {
+  max-width: 700px;
+  margin: 0, auto;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  border-color: #8ed2c9;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 2px;
+  box-shadow: 8px 5px 9px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+.location-button {
+  color: #fff;
+  background: #1dad9b;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  border: none;
+  margin-top: 2px;
+  padding: 0.375rem 0.75rem;
+  border-radius: 2px;
+}
+.location-button:hover {
+  color: #1dad9b;
+  background: #fff;
+  outline: solid;
+  outline-width: 2px;
+}
+.feels-like {
+  font-weight: 300;
+
+  color: grey;
+  font-size: 16px;
+}
+.current-weather {
+  color: #423b3b;
+}
+.fas {
+  color: slategrey;
+}
+.fas.fa-umbrella {
+  color: #1dad9b;
+}
+.current-weather-icon {
+  font-size: 90px;
+  text-align: center;
+}
+.day-date {
+  font-weight: 250;
+  font-size: 30px;
+  padding: 0;
+  margin: 0;
+}
+
+.temp {
+  font-size: 48px;
+  margin-bottom: 0;
+  color: #423b3b;
+  font-weight: 400;
+}
+
+.units {
+  position: relative;
+  top: -20px;
+  text-decoration: none;
+  font-size: 18px;
+}
