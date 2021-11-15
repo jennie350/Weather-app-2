@@ -89,3 +89,5 @@ currentLocationButton.addEventListener("click", currentLocationSearch);
 
 let form = document.querySelector("#city-search-form");
 form.addEventListener("submit", submitSearch);
+
+navigator.geolocation.getCurrentPosition(handlePosition);
