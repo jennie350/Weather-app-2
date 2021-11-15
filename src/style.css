@@ -33,18 +33,21 @@ li {
   padding-top: 4px;
   padding-bottom: 2px;
 }
-.container {
+.weather-app-wrapper {
   max-width: 700px;
   margin: 0, auto;
-  padding-top: 30px;
-  padding-bottom: 10px;
+  background: #fff;
   border-color: #8ed2c9;
   border-style: solid;
   border-width: 2px;
   border-radius: 2px;
   box-shadow: 8px 5px 9px rgba(0, 0, 0, 0.1);
-  background: #fff;
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
 }
+
 .location-button {
   color: #fff;
   background: #1dad9b;
@@ -63,22 +66,11 @@ li {
 }
 .feels-like {
   font-weight: 300;
-
   color: grey;
   font-size: 16px;
 }
 .current-weather {
   color: #423b3b;
-}
-.fas {
-  color: slategrey;
-}
-.fas.fa-umbrella {
-  color: #1dad9b;
-}
-.current-weather-icon {
-  font-size: 90px;
-  text-align: center;
 }
 .day-date {
   font-weight: 250;

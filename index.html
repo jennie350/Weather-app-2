@@ -24,60 +24,66 @@
   </head>
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col-9">
-          <form id="city-search-form">
-            <input
-              class="form-control"
-              id="city-search-input"
-              type="text"
-              placeholder="🔍 Type city"
-            />
-          </form>
-        </div>
-        <div class="col-3">
-          <form>
-            <input
-              type="submit"
-              value="Current location"
-              class="location-button"
-            />
-          </form>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-9">
-          <h1>London</h1>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-9">
-          <span id="day">Day, Time</span>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-4">
-          <p class="current-weather-icon">
-            <i class="fas fa-cloud-showers-heavy"></i>
-          </p>
-        </div>
-        <div class="col-3">
-          <span class="temp">12</span>
-          <span class="units"> °C </span>
-          <div class="feels-like">
-            Feels like <span id="feels-like">10</span>°C
+      <div class="weather-app-wrapper">
+        <div class="row">
+          <div class="col-9">
+            <form id="city-search-form">
+              <input
+                class="form-control"
+                id="city-search-input"
+                type="text"
+                placeholder="🔍 Type city"
+              />
+            </form>
           </div>
-          <div class="current-weather">Raining</div>
-          <p><i class="fas fa-umbrella"></i></p>
+          <div class="col-3">
+            <form>
+              <input
+                type="submit"
+                value="Current location"
+                class="location-button"
+              />
+            </form>
+          </div>
         </div>
-        <div class="col-3">
-          <ul>
-            <li>Wind speed <span id="windspeed"></span></li>
-            <li>Humidity <span id="humidity"></span></li>
-          </ul>
+        <div class="row">
+          <div class="col-9">
+            <h1>London</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-9">
+            <span id="day">Day, Time</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <img src="" alt="" id="current-weather-icon" class="float-left" />
+          </div>
+          <div class="col-3">
+            <span class="temp">12</span>
+            <span class="units"> °C </span>
+            <div class="feels-like">
+              Feels like <span id="feels-like">10</span>°C
+            </div>
+            <div class="current-weather">Raining</div>
+          </div>
+          <div class="col-3">
+            <ul>
+              <li>Wind speed <span id="windspeed"></span></li>
+              <li>Humidity <span id="humidity"></span></li>
+            </ul>
+          </div>
         </div>
       </div>
+      <small>
+        <a href="https://github.com/jennie350/Weather-app-2" target="_blank"
+          >Open-source code</a
+        >
+        by Jenny Watts
+      </small>
     </div>
+
     <script src="src/app.js"></script>
   </body>
 </html>

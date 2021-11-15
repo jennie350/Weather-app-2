@@ -14,6 +14,7 @@ let time = now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
 currentDay.innerHTML = `${day} ${time}`;
 
 function showWeather(response) {
+  console.log(response);
   document.querySelector("#feels-like").innerHTML = Math.round(
     response.data.main.feels_like
   );
@@ -27,6 +28,11 @@ function showWeather(response) {
     response.data.wind.speed
   );
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  let weatherIcon = document.querySelector("#current-weather-icon");
+  weatherIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function submitSearch(event) {
