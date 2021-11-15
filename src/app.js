@@ -45,3 +45,17 @@ function submitSearch(event) {
 
 let form = document.querySelector("#city-search-form");
 form.addEventListener("submit", submitSearch);
+
+function handlePosition(position) {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let apiKey = `e26555d3812486da4794499d94833f23`;
+  let apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiURL).then(showWeather);
+}
+function currentLocationSearch() {
+  navigator.geolocation.getCurrentPosition(handlePosition);
+}
+
+let currentLocationButton = document.querySelector(".location-button");
+currentLocationButton.addEventListener("click", currentLocationSearch);
