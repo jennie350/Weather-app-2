@@ -18,9 +18,8 @@ function showWeather(response) {
   document.querySelector("#feels-like").innerHTML = Math.round(
     response.data.main.feels_like
   );
-  document.querySelector(".temp").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  celsiusTemperature = response.data.main.temp;
+  document.querySelector(".temp").innerHTML = Math.round(celsiusTemperature);
   document.querySelector(".current-weather").innerHTML =
     response.data.weather[0].main;
   document.querySelector("h1").innerHTML = response.data.name;
