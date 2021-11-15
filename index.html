@@ -18,6 +18,7 @@
       src="https://kit.fontawesome.com/fba1d788d6.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>Weather</title>
   </head>
@@ -62,10 +63,7 @@
         </div>
         <div class="col-3">
           <span class="temp">12</span>
-          <span class="units">
-            <a href="#" id="celsius-link">°C</a> |
-            <a href="#" id="fahrenheit-link">°F</a>
-          </span>
+          <span class="units"> °C </span>
           <div class="feels-like">
             Feels like <span id="feels-like">10</span>°C
           </div>
@@ -74,11 +72,12 @@
         </div>
         <div class="col-3">
           <ul>
-            <li>Wind speed</li>
-            <li>Humidity</li>
+            <li>Wind speed <span id="windspeed"></span></li>
+            <li>Humidity <span id="humidity"></span></li>
           </ul>
         </div>
       </div>
     </div>
+    <script src="src/app.js"></script>
   </body>
 </html>
