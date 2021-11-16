@@ -92,3 +92,18 @@ li {
   top: -20px;
   font-size: 18px;
 }
+
+.weekly-weather {
+  padding-bottom: 12px;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.weekly-weather-temp-range {
+  font-size: 15px;
+}
+
+.weekly-weather-min-temp {
+  color: grey;
+}
