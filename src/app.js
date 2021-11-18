@@ -44,14 +44,6 @@ function showWeather(response) {
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
 
-function submitSearch(event) {
-  event.preventDefault();
-  let input = document.querySelector("#city-search-input").value;
-  let apiKey = `e26555d3812486da4794499d94833f23`;
-  let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=${apiKey}&units=metric`;
-  axios.get(apiURL).then(showWeather);
-}
-
 function handlePosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
@@ -61,6 +53,18 @@ function handlePosition(position) {
 }
 function currentLocationSearch() {
   navigator.geolocation.getCurrentPosition(handlePosition);
+}
+
+function submitSearch(event) {
+  event.preventDefault();
+  let input = document.querySelector("#city-search-input").value;
+  searchCity(input);
+}
+
+function searchCity(city) {
+  let apiKey = `e26555d3812486da4794499d94833f23`;
+  let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiURL).then(showWeather);
 }
 
 function displayFarenheitTemp(event) {
@@ -84,10 +88,10 @@ celciusLink.addEventListener("click", displayCelciusTemp);
 
 let celciusTemp = null;
 
-let currentLocationButton = document.querySelector(".location-button");
+let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", currentLocationSearch);
 
 let form = document.querySelector("#city-search-form");
 form.addEventListener("submit", submitSearch);
 
-navigator.geolocation.getCurrentPosition(handlePosition);
+searchCity("Singapore");
