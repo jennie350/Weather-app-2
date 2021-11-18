@@ -22,6 +22,34 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#weekly-weather-forecast");
+  let days = ["Fri", "Sat", "Sun", "Mon"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col-2">
+    <div class ="weather-forcast-day">
+      ${day} </div>
+      <div class="weekly-weather-icon">
+        <img
+          src="http://openweathermap.org/img/wn/04n@2x.png"
+          alt="weather icon"
+          width="36"
+        />
+      </div>
+      <div class="weekly-weather-temp-range">
+        <span class="weekly-weather-max-temp"> 30° </span>
+        <span class="weekly-weather-min-temp"> 27° </span>
+      </div>
+    </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showWeather(response) {
   document.querySelector("#feels-like").innerHTML = Math.round(
     response.data.main.feels_like
@@ -94,4 +122,5 @@ currentLocationButton.addEventListener("click", currentLocationSearch);
 let form = document.querySelector("#city-search-form");
 form.addEventListener("submit", submitSearch);
 
-searchCity("Singapore");
+searchCity("Berlin");
+displayForecast();
