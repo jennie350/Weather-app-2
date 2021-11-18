@@ -40,7 +40,7 @@ li {
 
 .weather-app-wrapper {
   max-width: 680px;
-  margin: 0, auto;
+  margin: auto;
   background: #fff;
   border-color: #8ed2c9;
   border-style: solid;
