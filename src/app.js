@@ -22,7 +22,8 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#weekly-weather-forecast");
   let days = ["Fri", "Sat", "Sun", "Mon"];
   let forecastHTML = `<div class="row">`;
@@ -50,6 +51,15 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+  let apiKey = `e26555d3812486da4794499d94833f23`;
+  let lat = coordinates.lat;
+  let lon = coordinates.lon;
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+  console.log(apiURL);
+  axios.get(apiURL).then(displayForecast);
+}
+
 function showWeather(response) {
   document.querySelector("#feels-like").innerHTML = Math.round(
     response.data.main.feels_like
@@ -70,9 +80,12 @@ function showWeather(response) {
   );
   let dateElement = document.querySelector("#day");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+
+  getForecast(response.data.coord);
 }
 
 function handlePosition(position) {
+  debugger;
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiKey = `e26555d3812486da4794499d94833f23`;
@@ -80,6 +93,7 @@ function handlePosition(position) {
   axios.get(apiURL).then(showWeather);
 }
 function currentLocationSearch() {
+  debugger;
   navigator.geolocation.getCurrentPosition(handlePosition);
 }
 
@@ -123,4 +137,3 @@ let form = document.querySelector("#city-search-form");
 form.addEventListener("submit", submitSearch);
 
 searchCity("Berlin");
-displayForecast();
