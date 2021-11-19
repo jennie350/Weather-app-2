@@ -22,28 +22,45 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function formatDay(timestamp) {
+  console.log(timestamp);
+  let date = new Date(timestamp * 1000);
+  console.log(date);
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  let day = days[date.getDay()];
+  console.log(day);
+  return `${day}`;
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
+  console.log(forecast);
   let forecastElement = document.querySelector("#weekly-weather-forecast");
-  let days = ["Fri", "Sat", "Sun", "Mon"];
+
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `
     <div class="col-2">
     <div class ="weather-forcast-day">
-      ${day} </div>
+      ${formatDay(forecastDay.dt)} </div>
       <div class="weekly-weather-icon">
         <img
-          src="http://openweathermap.org/img/wn/04n@2x.png"
+          src="http://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png"
           alt="weather icon"
           width="36"
         />
       </div>
       <div class="weekly-weather-temp-range">
-        <span class="weekly-weather-max-temp"> 30° </span>
-        <span class="weekly-weather-min-temp"> 27° </span>
+        <span class="weekly-weather-max-temp"> ${Math.round(
+          forecastDay.temp.max
+        )}° </span>
+        <span class="weekly-weather-min-temp"> ${Math.round(
+          forecastDay.temp.min
+        )}° </span>
       </div>
     </div>`;
   });
@@ -55,7 +72,7 @@ function getForecast(coordinates) {
   let apiKey = `e26555d3812486da4794499d94833f23`;
   let lat = coordinates.lat;
   let lon = coordinates.lon;
-  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   console.log(apiURL);
   axios.get(apiURL).then(displayForecast);
 }
