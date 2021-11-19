@@ -34,6 +34,12 @@ li {
   padding-bottom: 2px;
 }
 
+small {
+  padding-left: 40px;
+  font-family: monospace;
+  font-size: 12px;
+}
+
 .container {
   max-width: 100%;
 }
@@ -73,11 +79,12 @@ li {
   font-weight: 300;
   color: grey;
   font-size: 16px;
-  padding-top: 10px;
+  padding-top: 8px;
 }
 .current-weather {
   color: #423b3b;
 }
+
 .day-date {
   font-weight: 250;
   font-size: 30px;
@@ -100,7 +107,7 @@ li {
 
 .weekly-weather {
   padding-bottom: 12px;
-  padding-top: 10px;
+  padding-top: 15px;
   text-align: center;
   font-size: 16px;
 }

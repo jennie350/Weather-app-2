@@ -19,7 +19,7 @@ function formatDate(timestamp) {
     "Saturday",
   ];
   let day = days[date.getDay()];
-  return `${day} ${hours}:${minutes}`;
+  return `Last updated: ${day} ${hours}:${minutes}`;
 }
 
 function formatDay(timestamp) {
@@ -149,10 +149,10 @@ celciusLink.addEventListener("click", displayCelciusTemp);
 
 let celciusTemp = null;
 
-let currentLocationButton = document.querySelector("#current-location-button");
-currentLocationButton.addEventListener("click", currentLocationSearch);
-
 let form = document.querySelector("#city-search-form");
 form.addEventListener("submit", submitSearch);
+
+let currentLocationButton = document.querySelector("#current-location-button");
+currentLocationButton.addEventListener("click", currentLocationSearch);
 
 searchCity("Berlin");

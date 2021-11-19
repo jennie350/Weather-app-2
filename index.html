@@ -24,69 +24,71 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather-app-wrapper">
-        <div class="row">
-          <div class="col-9">
-            <form id="city-search-form">
-              <input
-                class="form-control"
-                id="city-search-input"
-                type="text"
-                placeholder="🔍 Type city"
-              />
-            </form>
-          </div>
-          <div class="col-3">
-            <form>
-              <input
-                type="submit"
-                value="Current location"
-                class="location-button"
-                id="current-location-button"
-              />
-            </form>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-9">
-            <h1></h1>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-9">
-            <span id="day"></span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-4">
-            <img src="" alt="" id="current-weather-icon" class="float-left" />
-          </div>
-          <div class="col-3">
-            <span class="temp"></span>
-            <span class="units"
-              ><a href="#" id="celcius-temp">°C</a> |
-              <a href="#" id="faren-temp">°F</a></span
-            >
-            <div class="feels-like">
-              Feels like <span id="feels-like"></span>°C
+      <div class="invisible-wrapper">
+        <div class="weather-app-wrapper">
+          <div class="row">
+            <div class="col-9">
+              <form id="city-search-form">
+                <input
+                  class="form-control"
+                  id="city-search-input"
+                  type="text"
+                  placeholder="🔍 Type city"
+                />
+              </form>
             </div>
-            <div class="current-weather"></div>
+            <div class="col-3">
+              <form>
+                <input
+                  type="submit"
+                  value="Current location"
+                  class="location-button"
+                  id="current-location-button"
+                />
+              </form>
+            </div>
           </div>
-          <div class="col-4">
-            <ul>
-              <li>Wind speed <span id="windspeed"></span>Km/h</li>
-              <li>Humidity <span id="humidity"></span>%</li>
-            </ul>
+          <div class="row">
+            <div class="col-9">
+              <h1></h1>
+            </div>
           </div>
+          <div class="row">
+            <div class="col-9">
+              <span id="day"></span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <img src="" alt="" id="current-weather-icon" class="float-left" />
+            </div>
+            <div class="col-3">
+              <span class="temp"></span>
+              <span class="units"
+                ><a href="#" id="celcius-temp">°C</a> |
+                <a href="#" id="faren-temp">°F</a></span
+              >
+              <div class="feels-like">
+                Feels like <span id="feels-like"></span>°C
+              </div>
+              <div class="current-weather"></div>
+            </div>
+            <div class="col-4">
+              <ul>
+                <li>Wind speed <span id="windspeed"></span>Km/h</li>
+                <li>Humidity <span id="humidity"></span>%</li>
+              </ul>
+            </div>
+          </div>
+          <div class="weekly-weather" id="weekly-weather-forecast"></div>
         </div>
-        <div class="weekly-weather" id="weekly-weather-forecast"></div>
+        <small>
+          <a href="https://github.com/jennie350/Weather-app-2" target="_blank"
+            >Open-source code</a
+          >
+          by Jenny Watts
+        </small>
       </div>
-      <small>
-        <a href="https://github.com/jennie350/Weather-app-2" target="_blank"
-          >Open-source code</a
-        >
-        by Jenny Watts
-      </small>
     </div>
     <script src="src/app.js"></script>
   </body>
