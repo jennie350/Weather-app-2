@@ -22,6 +22,7 @@ h1 {
   color: #423b3b;
   font-weight: 400;
   padding-bottom: 0;
+  padding-top: 10px;
   margin-bottom: 0;
 }
 
@@ -29,6 +30,7 @@ ul {
   list-style: none;
   color: grey;
 }
+
 li {
   padding-top: 4px;
   padding-bottom: 2px;
@@ -39,6 +41,7 @@ small {
   font-family: monospace;
   font-size: 12px;
   text-align: center;
+  padding-top: 18px;
 }
 
 .container {
@@ -80,15 +83,16 @@ small {
   font-weight: 300;
   color: grey;
   font-size: 16px;
-  padding-top: 8px;
 }
 .current-weather {
+  font-weight: 600;
   color: #423b3b;
+  padding-left: 2rem;
 }
 
 .day-date {
-  font-weight: 250;
-  font-size: 30px;
+  font-weight: lighter;
+  font-size: 14px;
   padding: 0;
   margin: 0;
 }
@@ -114,9 +118,13 @@ small {
 
 .weekly-weather {
   padding-bottom: 12px;
-  padding-top: 15px;
+  padding-top: 18px;
   text-align: center;
   font-size: 16px;
+}
+
+.weather-forcast-day {
+  color: grey;
 }
 
 .weekly-weather-temp-range {

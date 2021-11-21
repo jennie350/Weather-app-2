@@ -33,7 +33,8 @@
                   class="form-control"
                   id="city-search-input"
                   type="text"
-                  placeholder="🔍 Type city"
+                  placeholder="🔍 Type city and press Enter"
+                  style="box-shadow: none"
                 />
               </form>
             </div>
@@ -55,7 +56,7 @@
           </div>
           <div class="row">
             <div class="col-9">
-              <span id="day"></span>
+              <span class="day-date" id="day"></span>
             </div>
           </div>
           <div class="row">
@@ -71,9 +72,9 @@
               <div class="feels-like">
                 Feels like <span id="feels-like"></span>°C
               </div>
-              <div class="current-weather"></div>
             </div>
             <div class="col-4">
+              <div class="current-weather"></div>
               <ul>
                 <li>Wind speed <span id="windspeed"></span> km/h</li>
                 <li>Humidity <span id="humidity"></span>%</li>
