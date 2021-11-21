@@ -52,13 +52,13 @@ function displayForecast(response) {
             forecastDay.weather[0].icon
           }@2x.png"
           alt="weather icon"
-          width="36"
+          width="50"
         />
       </div>
       <div class="weekly-weather-temp-range">
         <span class="weekly-weather-max-temp"> ${Math.round(
           forecastDay.temp.max
-        )}° </span>
+        )}° </span> 
         <span class="weekly-weather-min-temp"> ${Math.round(
           forecastDay.temp.min
         )}° </span>
@@ -124,12 +124,15 @@ function searchCity(city) {
   axios.get(apiURL).then(showWeather);
 }
 
-function currentLocationSearch() {
+function currentLocationSearch(event) {
+  event.preventDefault();
   navigator.geolocation.getCurrentPosition(handlePosition);
 }
 
 function displayFarenheitTemp(event) {
   event.preventDefault();
+  celciusLink.classList.remove("active");
+  farenheitLink.classList.add("active");
   let temperatureElement = document.querySelector(".temp");
   let farenTemp = Math.round((celciusTemp * 9) / 5) + 32;
   temperatureElement.innerHTML = farenTemp;
@@ -137,6 +140,8 @@ function displayFarenheitTemp(event) {
 
 function displayCelciusTemp(event) {
   event.preventDefault();
+  celciusLink.classList.add("active");
+  farenheitLink.classList.remove("active");
   let temperatureElement = document.querySelector(".temp");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }

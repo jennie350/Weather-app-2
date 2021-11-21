@@ -35,9 +35,10 @@ li {
 }
 
 small {
-  padding-left: 40px;
+  display: block;
   font-family: monospace;
   font-size: 12px;
+  text-align: center;
 }
 
 .container {
@@ -103,6 +104,12 @@ small {
   position: relative;
   top: -20px;
   font-size: 18px;
+}
+
+.units .active {
+  text-decoration: none;
+  cursor: default;
+  color: #423b3b;
 }
 
 .weekly-weather {
