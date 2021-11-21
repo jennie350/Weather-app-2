@@ -70,6 +70,65 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function changeBackground() {
+  let currentWeather = document.querySelector(".current-weather");
+  let background = document.querySelector("body");
+  if (currentWeather.innerHTML === "Clouds") {
+    document.body.style.background = `linear-gradient(
+    181.2deg,
+    rgb(189, 210, 214) 10.5%,
+   
+    rgb(254, 254, 254) 86.8%
+  )`;
+  } else if (currentWeather.innerHTML === "Clear") {
+    document.body.style.background = `linear-gradient(
+    181.2deg,
+    rgb(181, 239, 249) 10.5%,
+        rgb(254, 254, 254) 86.8%
+  )`;
+  } else if (currentWeather.innerHTML === "Drizzle") {
+    document.body.style.background = `linear-gradient(
+    181.2deg,
+   rgb(131, 138, 160) 10.5%,
+    rgb(254, 254, 254) 86.8%
+  )`;
+  } else if (currentWeather.innerHTML === "Thunderstorm") {
+    document.body.style.background = `linear-gradient(
+    181.2deg,
+   rgb(58, 95, 135) 10.5%,
+    rgb(254, 254, 254) 86.8%
+  )`;
+  } else if (currentWeather.innerHTML === "Rain") {
+    document.body.style.background = `linear-gradient(
+    181.2deg,
+   rgb(55, 125, 200) 10.5%,
+    rgb(254, 254, 254) 86.8%
+  )`;
+  } else if (currentWeather.innerHTML === "snow") {
+    document.body.style.background = `linear-gradient(
+    181.2deg,
+   rgb(225, 246, 250) 10.5%,
+    rgb(254, 254, 254) 86.8%
+  )`;
+  } else if (
+    currentWeather.innerHTML === "Mist" ||
+    "Smoke" ||
+    "Haze" ||
+    "Dust" ||
+    "Fog" ||
+    "Sand" ||
+    "Ash" ||
+    "Squall" ||
+    "Tornado"
+  ) {
+    document.body.style.background = `linear-gradient(
+    181.2deg,
+   rgb(210, 232, 240) 10.5%,
+    rgb(254, 254, 254) 86.8%
+  )`;
+  }
+}
+
 function getForecast(coordinates) {
   let apiKey = `e26555d3812486da4794499d94833f23`;
   let lat = coordinates.lat;
@@ -101,6 +160,7 @@ function showWeather(response) {
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
 
   getForecast(response.data.coord);
+  changeBackground();
 }
 
 function handlePosition(position) {
